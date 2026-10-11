@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Pantau Suhu HP",
+      "type": "shell",
+      "command": "python \"C:/FlutterSDK/pantau_suhu.py\"",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "group": "pantau-suhu",
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
