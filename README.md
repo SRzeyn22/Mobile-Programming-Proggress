@@ -1,17 +1,68 @@
-# flutter_application_1
+# Laporan Praktikum Mobile Programming
 
-A new Flutter project.
+Repositori ini berisi kumpulan materi, latihan, dan tugas praktikum untuk mata kuliah **Mobile Programming** menggunakan *framework* [Flutter](https://flutter.dev/).
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Deskripsi Proyek
 
-A few resources to get you started if this is your first Flutter project:
+Proyek ini dibuat sebagai dokumentasi hasil pembelajaran praktikum *Mobile Programming*. Di dalamnya memuat berbagai implementasi fitur, tampilan antarmuka (UI), logika aplikasi, serta penggunaan *widget-widget* dasar hingga lanjut pada Flutter.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Struktur Direktori
+
+Berikut adalah struktur folder utama dari proyek Flutter ini:
+
+```text
+LaporanPraktikumMobile/
+├── android/          # Konfigurasi proyek platform Android
+├── ios/              # Konfigurasi proyek platform iOS
+├── lib/              # Kode utama aplikasi (Dart)
+├── assets/           # Asset gambar, ikon, dan resource lainnya
+│   └── icon/
+├── test/             # Kode untuk testing aplikasi
+├── web/              # Konfigurasi untuk dukungan Web
+├── windows/          # Konfigurasi untuk platform Windows
+├── macos/            # Konfigurasi untuk platform macOS
+├── linux/            # Konfigurasi untuk platform Linux
+├── pubspec.yaml      # Manajer dependensi & konfigurasi paket
+└── README.md         # Dokumentasi proyek
+```
+
+## Cara Menjalankan Proyek
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal Anda:
+
+### 1. Prasyarat
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) terinstal di perangkat Anda.
+- [Git](https://git-scm.com/) terinstal.
+- Text editor / IDE seperti **Visual Studio Code** atau **Android Studio**.
+- Emulator (Android/iOS) atau perangkat fisik yang terhubung via USB Debugging.
+
+### 2. Langkah-langkah
+
+1. **Clone Repositori**
+   ```bash
+   git clone https://github.com/SRZeyn22/LaporanPraktikumMobile.git
+   ```
+
+2. **Masuk ke Direktori Proyek**
+   ```bash
+   cd LaporanPraktikumMobile
+   ```
+
+3. **Unduh Dependensi**
+   ```bash
+   flutter pub get
+   ```
+
+4. **Jalankan Aplikasi**
+   Pastikan emulator berjalan atau HP sudah terhubung, lalu jalankan:
+   ```bash
+   flutter run
+   ```
+
+- **Bahasa Pemrograman:** [Dart](https://dart.dev/)
+- **Framework:** [Flutter](https://flutter.dev/)
+* **GitHub:** [@SRZeyn22](https://github.com/SRZeyn22)
