@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/game.dart';
-import 'package:flutter_application_1/viewmodel/fetchgame.dart';
+import '../model/game.dart';
+import '../viewmodel/fetchgame.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -101,7 +101,10 @@ TextField _searchBar() {
         size: 30,
       ),
       hintText: 'Cari game',
-      hintStyle: TextStyle(fontSize: 14, color: Colors.grey.withOpacity(0.7)),
+      hintStyle: TextStyle(
+        fontSize: 14,
+        color: Colors.grey.withValues(alpha: 0.7),
+      ),
     ),
   );
 }

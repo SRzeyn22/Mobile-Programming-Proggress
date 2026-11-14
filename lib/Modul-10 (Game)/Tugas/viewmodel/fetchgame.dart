@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:flutter_application_1/model/game.dart';
+import '../model/game.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Game>> fetchGames() async {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/viewmodel/fetchgame.dart';
-import 'package:flutter_application_1/model/detailgame.dart';
+import '../viewmodel/fetchgame.dart';
+import '../model/detailgame.dart';
 import 'package:readmore/readmore.dart';
 
 class Detail extends StatelessWidget {
@@ -56,7 +56,7 @@ class Detail extends StatelessWidget {
                           child: Container(
                             padding: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
-                              color: Colors.grey.withOpacity(0.8),
+                              color: Colors.grey.withValues(alpha: 0.8),
                               shape: BoxShape.circle,
                             ),
                             child: const Icon(
@@ -93,7 +93,7 @@ class Detail extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black54.withOpacity(0.8),
+                                  color: Colors.black54.withValues(alpha: 0.8),
                                 ),
                               ),
                             ),
@@ -149,7 +149,7 @@ class Detail extends StatelessWidget {
                                 colorClickableText: Colors.amberAccent.shade400,
                                 trimMode: TrimMode.Line,
                                 style: TextStyle(
-                                  color: Colors.black54.withOpacity(0.8),
+                                  color: Colors.black54.withValues(alpha: 0.8),
                                   height: 1.5,
                                 ),
                                 trimCollapsedText: 'more',
@@ -189,21 +189,21 @@ Row _requirementRow(String title, String value) {
         flex: 3,
         child: Text(
           title,
-          style: TextStyle(color: Colors.black54.withOpacity(0.8)),
+          style: TextStyle(color: Colors.black54.withValues(alpha: 0.8)),
         ),
       ),
       Expanded(
         flex: 1,
         child: Text(
           ':',
-          style: TextStyle(color: Colors.black54.withOpacity(0.8)),
+          style: TextStyle(color: Colors.black54.withValues(alpha: 0.8)),
         ),
       ),
       Expanded(
         flex: 8,
         child: Text(
           value,
-          style: TextStyle(color: Colors.black54.withOpacity(0.8)),
+          style: TextStyle(color: Colors.black54.withValues(alpha: 0.8)),
         ),
       ),
     ],
