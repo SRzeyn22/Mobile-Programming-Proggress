@@ -44,12 +44,12 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lingkungan lokal A
 
 1. **Clone Repositori**
    ```bash
-   git clone https://github.com/SRZeyn22/LaporanPraktikumMobile.git
+   git clone https://github.com/SRZeyn22/Mobile-Programming-Proggress.git
    ```
 
 2. **Masuk ke Direktori Proyek**
    ```bash
-   cd LaporanPraktikumMobile
+   cd Mobile-Programming-Proggress
    ```
 
 3. **Unduh Dependensi**
