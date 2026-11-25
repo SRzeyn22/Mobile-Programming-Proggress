@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
         throw Exception('Gagal load data');
       }
     } catch (e) {
-      print('Error: $e');
+      debugPrint('Error: $e');
     }
   }
 

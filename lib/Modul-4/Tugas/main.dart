@@ -13,10 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Pemutar Musik',
       theme: ThemeData.dark(),
       home: Scaffold(
-        body: Center(
-          child: Container(
-            child: Text("Pemutar Musik", style: TextStyle(fontSize: 25)),
-          ),
+        body: const Center(
+          child: Text("Pemutar Musik", style: TextStyle(fontSize: 25)),
         ),
         bottomNavigationBar: Container(
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),

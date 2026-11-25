@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Country Explorer (UAS)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "toolArgs": [
+        "--dart-define-from-file=env.json"
+      ]
+    },
+    {
+      "name": "Menu Modul",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/menu_modul.dart"
+    },
+    {
+      "name": "Country Explorer (UTS)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/UTS/main.dart"
+    }
+  ]
+}

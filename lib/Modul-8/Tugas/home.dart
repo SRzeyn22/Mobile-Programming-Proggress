@@ -14,19 +14,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var title;
-  var thumbnail;
-  var short_description;
-  var description;
+  String? title;
+  String? thumbnail;
+  String? shortDescription;
+  String? description;
 
-  var genre;
-  var platform;
-  var release;
-  var cover;
-  var gameid;
-  var publisher;
+  String? genre;
+  String? platform;
+  String? release;
+  String? cover;
+  String? gameid;
+  String? publisher;
 
-  Future getGame(String gameid) async {
+  Future<void> getGame(String gameid) async {
     http.Response response = await http.get(
       Uri.parse('https://www.freetogame.com/api/game?id=$gameid'),
     );
@@ -35,15 +35,15 @@ class _HomeState extends State<Home> {
 
     setState(() {
       this.gameid = gameid;
-      title = results['title'];
-      thumbnail = results['thumbnail'];
-      short_description = results['short_description'];
-      description = results['description'];
-      genre = results['genre'];
-      platform = results['platform'];
-      publisher = results['publisher'];
-      release = results['release_date'];
-      cover = results['screenshots'][0]['image'];
+      title = results['title']?.toString();
+      thumbnail = results['thumbnail']?.toString();
+      shortDescription = results['short_description']?.toString();
+      description = results['description']?.toString();
+      genre = results['genre']?.toString();
+      platform = results['platform']?.toString();
+      publisher = results['publisher']?.toString();
+      release = results['release_date']?.toString();
+      cover = results['screenshots'][0]['image']?.toString();
     });
   }
 
@@ -75,11 +75,11 @@ class _HomeState extends State<Home> {
                         ),
                         child: Column(
                           children: [
-                            Image.network(thumbnail),
+                            Image.network(thumbnail ?? ''),
 
                             const SizedBox(height: 15),
 
-                            Text(title, style: const TextStyle(fontSize: 24)),
+                            Text(title ?? '', style: const TextStyle(fontSize: 24)),
 
                             const SizedBox(height: 10),
 
@@ -111,10 +111,10 @@ class _HomeState extends State<Home> {
                           context,
                           Tujuan.routeName,
                           arguments: ScreenArguments(
-                            cover,
-                            title,
-                            description,
-                            short_description,
+                            cover ?? '',
+                            title ?? '',
+                            description ?? '',
+                            shortDescription ?? '',
                           ),
                         );
                       },

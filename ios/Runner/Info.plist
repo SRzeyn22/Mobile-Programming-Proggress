@@ -66,5 +66,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Lokasi dipakai untuk menampilkan posisi dan alamat Anda.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Galeri dipakai untuk memilih foto catatan perjalanan.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Kamera dipakai untuk mengambil foto catatan perjalanan.</string>
 </dict>
 </plist>

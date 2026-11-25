@@ -102,23 +102,23 @@ class Detail extends StatelessWidget {
                               children: [
                                 _requirementRow(
                                   'OS',
-                                  game.minimum_system_requirements.os,
+                                  game.minimumSystemRequirements.os,
                                 ),
                                 _requirementRow(
                                   'Processor',
-                                  game.minimum_system_requirements.processor,
+                                  game.minimumSystemRequirements.processor,
                                 ),
                                 _requirementRow(
                                   'Memory',
-                                  game.minimum_system_requirements.memory,
+                                  game.minimumSystemRequirements.memory,
                                 ),
                                 _requirementRow(
                                   'Graphics',
-                                  game.minimum_system_requirements.graphics,
+                                  game.minimumSystemRequirements.graphics,
                                 ),
                                 _requirementRow(
                                   'Storage',
-                                  game.minimum_system_requirements.storage,
+                                  game.minimumSystemRequirements.storage,
                                 ),
                               ],
                             ),
