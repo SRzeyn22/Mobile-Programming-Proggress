@@ -1,40 +1,92 @@
-# Country Explorer (UAS)
+# Laporan Praktikum Mobile Programming — Country Explorer (UAS)
 
-Aplikasi Flutter Country Explorer. `lib/main.dart` menjalankan versi **UAS**
-(`lib/UAS`). Kode UTS ada di `lib/UTS` dan **tidak diubah**.
+Repositori ini berisi kumpulan materi, latihan, tugas praktikum (Modul 1–13), proyek **UTS**, dan aplikasi **UAS Country Explorer** untuk mata kuliah **Mobile Programming** menggunakan *framework* [Flutter](https://flutter.dev/).
 
-## Cara menjalankan
+- `lib/main.dart` menjalankan aplikasi **UAS Country Explorer** (`lib/UAS`).
+- Kode **UTS** tetap utuh di `lib/UTS` (`flutter run -t lib/UTS/main.dart`).
+- Menu seluruh **Modul 1–13 & UTS** tersedia di `lib/menu_modul.dart` (`flutter run -t lib/menu_modul.dart`).
+
+---
+
+## Struktur Direktori
+
+```text
+Mobile-Programming-Proggress/
+├── android/               # Konfigurasi proyek platform Android
+├── ios/                   # Konfigurasi proyek platform iOS
+├── lib/                   # Kode utama aplikasi (Dart)
+│   ├── Modul-1 .. Modul-13/
+│   ├── UTS/               # Aplikasi Country Explorer versi UTS
+│   ├── UAS/               # Aplikasi Country Explorer versi UAS (Coastal Journey)
+│   ├── main.dart          # Entry point utama (menjalankan UAS)
+│   └── menu_modul.dart    # Entry point menu seluruh modul praktikum
+├── assets/                # Asset gambar dan ikon
+│   ├── icon/
+│   └── images/
+├── test/                  # Unit test dan widget test
+├── env.example.json       # Template konfigurasi Unsplash Access Key
+├── pubspec.yaml           # Manajer dependensi & konfigurasi paket
+└── README.md              # Dokumentasi proyek
 ```
-flutter pub get
-flutter analyze
-flutter test
-flutter run            # pilih perangkat Android
-```
-UTS: `flutter run -t lib/UTS/main.dart` · Menu modul: `flutter run -t lib/menu_modul.dart`
 
-## Fitur UAS
-- **Home**: daftar & pencarian negara (API countries.dev), menu Lokasi Saya, My Travel List, Favorit, World Map.
-- **My Travel List**: CRUD catatan (GET/POST/PUT/DELETE ke JSONPlaceholder), contoh awal "Holiday", Travel Statistics, banyak foto (maks. 8, galeri/kamera, digeser ke samping), destinasi lewat pencarian negara, status Ingin/Sudah Dikunjungi.
-- **Favorit**: ikon hati di detail negara, halaman Favorit, tersimpan di perangkat.
-- **World Map**: flutter_map + tile OpenStreetMap; satu penanda per catatan Travel List yang punya koordinat valid (GPS atau Custom Location). Warna = status (biru: ingin, hijau: sudah dikunjungi), ikon kecil = sumber lokasi (crosshair: GPS, kaca pembesar: Custom). Ketuk penanda untuk info catatan; tombol "Lihat Detail Catatan" membuka halaman detail.
-- **Lokasi Saya (Modul XII)**: geolocator + geocoding dengan penanganan null/izin/GPS/timeout.
+---
 
-## Dependensi & kebutuhan
-- Internet: API negara, JSONPlaceholder, dan tile peta OpenStreetMap.
-- Paket baru: `shared_preferences`, `image_picker`, `flutter_map`, `latlong2`.
-- Reverse geocoding (alamat) hanya berjalan di Android/iOS, bukan di browser.
+## Fitur UAS (Country Explorer — "Coastal Journey")
 
-## Catatan data
-JSONPlaceholder adalah API demonstrasi: POST/PUT/DELETE tidak tersimpan permanen
-di server. Data catatan, foto, dan favorit disimpan **di perangkat** (shared_preferences).
+- **Home**: kartu editorial (foto destinasi Unsplash + bendera), pencarian negara/ibu kota, filter kawasan (Semua / Asia / Eropa / Afrika / Amerika / Oseania), serta menu Lokasi Saya, My Travel List, Favorit, dan World Map.
+- **My Travel List**: CRUD catatan perjalanan (GET/POST/PUT/DELETE ke JSONPlaceholder + penyimpanan lokal `shared_preferences`), contoh awal "Holiday", Travel Statistics, galeri hingga 8 foto (galeri/kamera), pencarian destinasi, dan status Ingin/Sudah Dikunjungi.
+- **Favorit**: ikon hati pada detail negara dan halaman Favorit tersimpan di perangkat.
+- **World Map**: `flutter_map` + tile OpenStreetMap; penanda per catatan Travel List berkoordinat valid (GPS atau Custom Location) dengan indikator status dan sumber lokasi.
+- **Lokasi Saya (Modul XII)**: `geolocator` + `geocoding` dengan penanganan null, izin, GPS, dan timeout. *(Reverse geocoding berjalan di Android/iOS, bukan di browser.)*
 
-## Country Explorer "Coastal Journey" dan foto Unsplash
+---
 
-- Home memakai kartu editorial (foto destinasi + bendera), pencarian, dan filter kawasan (Semua/Asia/Eropa/Afrika/Amerika/Oseania) berdasarkan field `region` dari API.
-- Foto destinasi diambil dari Unsplash secara lazy dan di-cache (URL di SharedPreferences, gambar di disk lewat `cached_network_image`). Tanpa Access Key, kartu memakai bendera.
-- Access Key TIDAK ditulis di source. Berikan saat menjalankan/membangun aplikasi:
+## Cara Menjalankan Proyek
 
-      flutter run --dart-define=UNSPLASH_ACCESS_KEY=ACCESS_KEY_ANDA
-      flutter build apk --dart-define=UNSPLASH_ACCESS_KEY=ACCESS_KEY_ANDA
+### 1. Prasyarat
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) terinstal.
+- [Git](https://git-scm.com/) terinstal.
+- Editor (VS Code / Android Studio) dan emulator atau HP fisik (USB/Wireless Debugging).
 
-- Catatan keamanan: Access Key pada aplikasi client-side dapat diekstrak dari APK. Gunakan hanya Access Key (bukan Secret Key); untuk produksi gunakan proxy backend.
+### 2. Langkah-langkah
+1. **Clone Repositori**
+   ```bash
+   git clone https://github.com/SRzeyn22/Mobile-Programming-Proggress.git
+   cd Mobile-Programming-Proggress
+   ```
+
+2. **Unduh Dependensi**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Konfigurasi Foto Unsplash (Opsional)**
+   Access Key Unsplash **tidak** ditulis di source code. Tanpa Access Key, aplikasi tetap berjalan normal menggunakan bendera sebagai fallback.
+   - Salin `env.example.json` menjadi `env.json` (diabaikan oleh `.gitignore`), lalu isi **Access Key** Anda:
+     ```json
+     {
+       "UNSPLASH_ACCESS_KEY": "ACCESS_KEY_ANDA"
+     }
+     ```
+   - Jalankan atau build dengan:
+     ```bash
+     flutter run --dart-define-from-file=env.json
+     flutter build apk --dart-define-from-file=env.json
+     ```
+   - Atau langsung lewat flag:
+     ```bash
+     flutter run --dart-define=UNSPLASH_ACCESS_KEY=ACCESS_KEY_ANDA
+     ```
+   *(Catatan keamanan: gunakan hanya **Access Key**, bukan Secret Key; untuk produksi gunakan proxy backend.)*
+
+4. **Jalankan Analisis & Pengujian**
+   ```bash
+   flutter analyze
+   flutter test
+   ```
+
+---
+
+- **Bahasa Pemrograman:** [Dart](https://dart.dev/)
+- **Framework:** [Flutter](https://flutter.dev/)
+- **GitHub:** [@SRzeyn22](https://github.com/SRzeyn22)
